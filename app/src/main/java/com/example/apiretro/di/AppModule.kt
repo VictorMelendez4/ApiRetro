@@ -24,4 +24,12 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    @Singleton
+    @Provides
+    fun providesAPIGames(retrofit: Retrofit): APIGames {
+        return retrofit.create(APIGames::class.java)
+    }
+
+
 }
