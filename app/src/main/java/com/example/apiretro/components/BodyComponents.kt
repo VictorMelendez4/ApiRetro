@@ -44,7 +44,7 @@ import com.example.apiretro.model.GameList
 import com.example.apiretro.utils.Constants.Companion.CUSTOM_BLACK
 import com.example.apiretro.utils.Constants.Companion.CUSTOM_GREEN
 
-@OptIn(ExperimentalStdlibApi::class, ExperimentalMaterial3Api::class)
+@OptIn( ExperimentalMaterial3Api::class)
 @Composable
 fun MainTopBar(title:String,showBackButton:Boolean = false,
                onClickBackButton:()-> Unit,
@@ -81,20 +81,19 @@ fun MainTopBar(title:String,showBackButton:Boolean = false,
 }
 
 @Composable
-fun CardGame(game: GameList, onClick: ()->Unit){
+fun CardGame(game: GameList, onClick: () -> Unit){
     Card(
-        shape = RoundedCornerShape(5.dp),
-        modifier = Modifier
+        shape= RoundedCornerShape(5.dp),
+        modifier= Modifier
             .padding(3.dp)
             .shadow(40.dp)
-            .clickable{onClick()}
+            .clickable { onClick() }
     ){
         Column{
-
+            //Imagen
         }
     }
 }
-
 @Composable
 fun MainImage(image: String){
     val image=rememberImagePainter(data=image)
